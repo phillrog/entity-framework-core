@@ -1,3 +1,4 @@
-Curso/obj/CursoEFCore.csproj.nuget.dgspec.json
-Curso/obj/CursoEFCore.csproj.nuget.g.props
-Curso/obj/CursoEFCore.csproj.nuget.g.targets
+Curso/bin/
+Curso/obj/
+Curso/obj/project.assets.json
+Curso/obj/project.nuget.cache
