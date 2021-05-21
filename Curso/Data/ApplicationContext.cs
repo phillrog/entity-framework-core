@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using CursoEFCore.Domain;
 using Microsoft.EntityFrameworkCore;
@@ -17,7 +18,11 @@ namespace CursoEFCore.Data
         {
             optionsBuilder.UseLoggerFactory(_logger)
                 .EnableSensitiveDataLogging()
-                .UseSqlServer("Data source=(localdb)\\mssqllocaldb;Initial Catalog=CursoEFCore;Integrated Security=true");
+                .UseSqlServer("Data source=(localdb)\\mssqllocaldb;Initial Catalog=CursoEFCore;Integrated Security=true",
+                p=> p.EnableRetryOnFailure(
+                     maxRetryCount: 2, 
+                     maxRetryDelay: TimeSpan.FromSeconds(5), 
+                     errorNumbersToAdd: null).MigrationsHistoryTable("curso_ef_core"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
