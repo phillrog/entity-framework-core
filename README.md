@@ -59,3 +59,11 @@ dotnet ef migrations remove -p .\Curso\CursoEFCore.csproj
 using var db = new Data.ApplicationContext();
 var existe = db.Database.GetPendingMigrations().Any();
 if (existe) //Faz alguma coisa
+
+### Rodar o projeto
+
+dotnet run
+
+### Pacote de logging
+
+dotnet add package Microsoft.Extensions.Logging.Console -v 3.1.5
