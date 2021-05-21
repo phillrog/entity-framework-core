@@ -19,7 +19,8 @@ namespace CursoEFCore
            // Console.WriteLine("Hello World!");
            //InserirDados();
 
-           InserirDadosEmMassa();
+           //InserirDadosEmMassa();
+           ConsultarDados();
         }
 
 private static void InserirDadosEmMassa()
@@ -85,6 +86,23 @@ private static void InserirDadosEmMassa()
 
             var registros = db.SaveChanges();
             Console.WriteLine($"Total Registro(s): {registros}");
+        }
+
+        private static void ConsultarDados()
+        {
+            using var db = new Data.ApplicationContext();
+            //var consultaPorSintaxe = (from c in db.Clientes where c.Id>0 select c).ToList();
+            var consultaPorMetodo = db.Clientes
+                .Where(p => p.Id > 24000)
+                .OrderBy(p => p.Id)
+                .ToList();
+
+            foreach (var cliente in consultaPorMetodo)
+            {
+                Console.WriteLine($"Consultando Cliente: {cliente.Id}");
+                //db.Clientes.Find(cliente.Id);
+                db.Clientes.FirstOrDefault(p => p.Id == cliente.Id);
+            }
         }
     }
 }
