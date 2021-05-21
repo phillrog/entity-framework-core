@@ -13,7 +13,7 @@ namespace CursoEFCore
         {
             using var db = new Data.ApplicationContext();
 
-            //db.Database.Migrate();
+            db.Database.Migrate();
            // var existe = db.Database.GetPendingMigrations().Any();
 
            // Console.WriteLine("Hello World!");
@@ -27,7 +27,7 @@ namespace CursoEFCore
         //    ConsultarPedidoCarregamentoAdiantado();
             // AtualizarDados();
 
-            RemoverRegistro();
+            // RemoverRegistro();
         }
 
         private static void InserirDadosEmMassa()
