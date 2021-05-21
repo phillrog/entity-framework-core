@@ -48,3 +48,7 @@ dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.Tool
 -i - Idempotente
 
 dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\Idempotente.SQL -i       
+
+### Remover uma migração
+
+dotnet ef migrations remove -p .\Curso\CursoEFCore.csproj
