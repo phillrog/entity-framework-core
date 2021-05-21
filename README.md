@@ -39,3 +39,12 @@ dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.Tool
 
 
  dotnet ef database update -p .\Curso\CursoEFCore.csproj -v
+
+
+ ### Scripts idempotentes
+
+ É uma funcionalidade do EF que aplica validações do que já foi criado no banco e aplicar somente o que está faltando dessa forma é possível executar este script várias vezes sem nenhum problema diferente de executar o .sql diretamente que emitiria o erro dizendo que já foi criado as tabelas por exemplo.
+
+-i - Idempotente
+
+dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\Idempotente.SQL -i       
