@@ -32,4 +32,10 @@ dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.Tool
 -p - Nome doprojeto
 -o - Diretório de saída
 
- dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\PrimeiraMigracaoSQL.SQL 
+ dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\PrimeiraMigracaoSQL.SQL
+
+ ### Aplicando a migração
+-v - Verbose exibe detalhes da execução
+
+
+ dotnet ef database update -p .\Curso\CursoEFCore.csproj -v
