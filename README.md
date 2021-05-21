@@ -52,3 +52,10 @@ dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\Idempotente
 ### Remover uma migração
 
 dotnet ef migrations remove -p .\Curso\CursoEFCore.csproj
+
+
+### Checar se existe migração pendente
+
+using var db = new Data.ApplicationContext();
+var existe = db.Database.GetPendingMigrations().Any();
+if (existe) //Faz alguma coisa
