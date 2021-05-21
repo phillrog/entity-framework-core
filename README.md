@@ -26,3 +26,10 @@ dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.SqlS
 
 dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.Design --version 3.1.5
 dotnet add .\Curso\CursoEFCore.csproj package Microsoft.EntityFrameworkCore.Tools --version 3.1.5
+
+### Gerar script sql de um migration
+
+-p - Nome doprojeto
+-o - Diretório de saída
+
+ dotnet ef migrations script -p .\Curso\CursoEFCore.csproj -o .\Curso\PrimeiraMigracaoSQL.SQL 
